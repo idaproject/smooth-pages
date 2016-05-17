@@ -1,0 +1,29 @@
+{
+  "name": "smooth-pages",
+  "version": "0.0.1",
+  "description": "Adds smooth transititon between pages",
+  "main": "build/smooth-pages.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "mkdir -p ./build && cp ./src/smooth-pages.js ./build && uglifyjs ./src/smooth-pages.js >./build/smooth-pages.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/idaproject/smooth-pages.git"
+  },
+  "keywords": [
+    "smooth",
+    "fade",
+    "transition",
+    "pages"
+  ],
+  "author": "ar7n",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/idaproject/smooth-pages/issues"
+  },
+  "homepage": "https://github.com/idaproject/smooth-pages#readme",
+  "devDependencies": {
+    "uglify-js": "^2.6.2"
+  }
+}

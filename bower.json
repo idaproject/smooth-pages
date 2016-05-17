@@ -1,0 +1,23 @@
+{
+  "name": "smooth-pages",
+  "description": "Adds smooth transititon between pages",
+  "main": "build/smooth-pages.js",
+  "authors": [
+    "ar7n"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "smooth",
+    "fade",
+    "transition",
+    "pages"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
