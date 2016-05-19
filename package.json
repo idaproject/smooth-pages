@@ -1,11 +1,12 @@
 {
   "name": "smooth-pages",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Adds smooth transititon between pages",
   "main": "build/smooth-pages.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "mkdir -p ./build && cp ./src/smooth-pages.js ./build && uglifyjs ./src/smooth-pages.js >./build/smooth-pages.min.js"
+    "lint": "eslint ./src/smooth-pages.js",
+    "build": "npm run lint && mkdir -p ./build && cp ./src/smooth-pages.js ./build && uglifyjs ./src/smooth-pages.js >./build/smooth-pages.min.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,9 @@
   },
   "homepage": "https://github.com/idaproject/smooth-pages#readme",
   "devDependencies": {
+    "eslint": "^2.10.2",
+    "eslint-config-airbnb-base": "^3.0.1",
+    "eslint-plugin-import": "^1.8.0",
     "uglify-js": "^2.6.2"
   }
 }
