@@ -9,21 +9,27 @@
 }(this, function () {
   var init = function (options) {
     var htmlColor;
-    var overlayColor = '#ffffff';
     var sheet = document.createElement('style');
     var overlay;
     var preloader;
+    var attrname;
+    var config = {
+      overlayColor: '#ffffff',
+      fadeOut: true
+    };
     if (options && !options instanceof Object) {
       throw new Error('options parameter must be an object');
     }
-    if (options && typeof options.overlayColor !== 'undefined') {
-      overlayColor = options.overlayColor;
+    for (attrname in options) {
+      if (options.hasOwnProperty(attrname)) {
+        config[attrname] = options[attrname];
+      }
     }
 
     sheet.type = 'text/css';
     (document.head || document.getElementsByTagName('head')[0]).appendChild(sheet);
     htmlColor = document.documentElement.style.backgroundColor;
-    document.documentElement.style.backgroundColor = overlayColor;
+    document.documentElement.style.backgroundColor = config.overlayColor;
     sheet.appendChild(document.createTextNode(
       '@keyframes preloader-spin {from {transform: rotate(0deg);} ' +
       'to {transform: rotate(360deg);}}\n' +
@@ -58,7 +64,7 @@
       document.body.appendChild(overlay);
       overlay.style.cssText =
         'position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 1000; ' +
-        'background: ' + overlayColor + '; opacity: 1; ' +
+        'background: ' + config.overlayColor + '; opacity: 1; ' +
         'transition: opacity 0.3s ease-in, z-index 0.3s step-end';
       preloader = document.createElement('img');
       overlay.appendChild(preloader);
@@ -67,7 +73,9 @@
         'position: absolute; top: 50%; left: 50%; margin-top: -12px; margin-left: -12px; ' +
         'animation: preloader-spin 1s linear infinite;';
       sheet.appendChild(document.createTextNode('body { display: block; }'));
-      document.body.addEventListener('click', handleLinkClick);
+      if (config.fadeOut) {
+        document.body.addEventListener('click', handleLinkClick);
+      }
     });
 
     window.addEventListener('load', function () {
