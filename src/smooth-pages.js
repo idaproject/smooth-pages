@@ -43,7 +43,7 @@
         return;
       }
       href = e.target.getAttribute('href');
-      if (/^javascript:|^#|^\/#/.exec(href)) {
+      if (/^javascript:|^mailto:|^tel:|^#|^\/#/.exec(href)) {
         return;
       }
       e.preventDefault();
