@@ -86,8 +86,8 @@
     });
 
     window.addEventListener('load', function () {
-      // overlay.style.opacity = '0';
-      // overlay.style.zIndex = '-1';
+      overlay.style.opacity = '0';
+      overlay.style.zIndex = '-1';
       document.documentElement.style.backgroundColor = htmlColor;
     });
   };
