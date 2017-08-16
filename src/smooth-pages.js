@@ -7,6 +7,14 @@
     root.SmoothPages = factory();
   }
 }(this, function () {
+  var spinnerImage =
+    'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNC' +
+    'IgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjODA4MDgwIiBkPSJNMTcuMjUgMS41Yy' +
+    '0uMTQtLjA2LS4yOC0uMTEtLjQ0LS4xMS0uNTUgMC0xIC40NS0xIDEgMCAuMzkuMjMuNzIuNTYuODlsLS4wMS4wMWMzLj' +
+    'IgMS42IDUuMzkgNC45IDUuMzkgOC43MSAwIDUuMzgtNC4zNyA5Ljc1LTkuNzUgOS43NVMyLjI1IDE3LjM5IDIuMjUgMT' +
+    'JjMC0zLjgyIDIuMi03LjExIDUuMzktOC43MXYtLjAyYy4zMy0uMTYuNTYtLjQ5LjU2LS44OSAwLS41NS0uNDUtMS0xLT' +
+    'EtLjE2IDAtLjMxLjA1LS40NC4xMUMyLjkgMy40My4yNSA3LjQuMjUgMTJjMCA2LjQ5IDUuMjYgMTEuNzUgMTEuNzUgMT' +
+    'EuNzVTMjMuNzUgMTguNDkgMjMuNzUgMTJjMC00LjYtMi42NS04LjU3LTYuNS0xMC41eiI+PC9wYXRoPjwvc3ZnPg==';
   var init = function (options) {
     var htmlColor;
     var sheet = document.createElement('style');
@@ -18,7 +26,7 @@
     var config = {
       overlayColor: '#ffffff',
       fadeOut: true,
-      spinnerImage: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#808080" d="M17.25 1.5c-.14-.06-.28-.11-.44-.11-.55 0-1 .45-1 1 0 .39.23.72.56.89l-.01.01c3.2 1.6 5.39 4.9 5.39 8.71 0 5.38-4.37 9.75-9.75 9.75S2.25 17.39 2.25 12c0-3.82 2.2-7.11 5.39-8.71v-.02c.33-.16.56-.49.56-.89 0-.55-.45-1-1-1-.16 0-.31.05-.44.11C2.9 3.43.25 7.4.25 12c0 6.49 5.26 11.75 11.75 11.75S23.75 18.49 23.75 12c0-4.6-2.65-8.57-6.5-10.5z"></path></svg>',
+      spinnerImage: spinnerImage,
       spinnerSize: 24
     };
 
