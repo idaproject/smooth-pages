@@ -21,7 +21,6 @@
     var overlay;
     var preloader;
     var attrname;
-    var loadFunction;
     var hideFunction;
     var config = {
       overlayColor: '#ffffff',
@@ -91,7 +90,7 @@
         'margin-left: -' + config.spinnerSize / 2 + 'px; ' +
         'animation: preloader-spin 1s linear infinite, preloader-fade-in 0.1s linear;';
       sheet.appendChild(document.createTextNode('body { display: block; }'));
-      if (config.fadeOut) {
+      if (config.fadeOut && !/^((?!chrome|android).)*safari|firefox/i.test(navigator.userAgent)) {
         document.body.addEventListener('click', handleLinkClick);
       }
     });
@@ -102,17 +101,7 @@
       document.documentElement.style.backgroundColor = htmlColor;
     };
 
-    loadFunction = function () {
-      // Hack for safari back-forward cache
-      if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
-        setInterval(function () {
-          hideFunction();
-        }, 100);
-      } else {
-        hideFunction();
-      }
-    };
-    window.addEventListener('load', loadFunction);
+    window.addEventListener('load', hideFunction);
   };
 
   return { init: init };

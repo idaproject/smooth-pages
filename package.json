@@ -1,6 +1,6 @@
 {
   "name": "smooth-pages",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "Adds smooth transititon between pages",
   "main": "build/smooth-pages.js",
   "scripts": {
